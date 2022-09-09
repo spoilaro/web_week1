@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+
+    <script>
+      function change_heading() {
+        console.log("hello world");
+        const heading = document.getElementById("heading");
+        heading.innerHTML = "My notebook";
+      }
+
+      function add_data() {
+        const parent_elem = document.getElementById("list");
+        const text_area = document.getElementById("text-area");
+
+        let text = text_area.value;
+
+        let new_item = document.createElement("li");
+        new_item.appendChild(document.createTextNode(text));
+        parent_elem.appendChild(new_item);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1 id="heading">Hello world</h1>
+    <button onclick="change_heading()">Change heading</button>
+    <ul id="list"></ul>
+
+    <textarea name="TextInput" id="text-area" cols="30" rows="10"></textarea>
+    <button onclick="add_data()">Add data</button>
+  </body>
+</html>
